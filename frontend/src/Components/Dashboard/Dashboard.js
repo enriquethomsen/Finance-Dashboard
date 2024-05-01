@@ -8,11 +8,11 @@ import Chart from '../Chart/Chart';
 
 function Dashboard() {
     const {totalExpenses,incomes, expenses, totalIncome, totalBalance, getIncomes, getExpenses } = useGlobalContext()
-    const minExpense = expenses.length > 0 ? Math.min(...expenses.map(item => item.amount)) : 0;
+  /*   const minExpense = expenses.length > 0 ? Math.min(...expenses.map(item => item.amount)) : 0;
     const maxExpense = expenses.length > 0 ? Math.max(...expenses.map(item => item.amount)) : 0;
     
     const minIncome = incomes.length > 0 ? Math.max(...incomes.map(item => item.amount)) : 0;
-    const maxIncome = incomes.length > 0 ? Math.max(...incomes.map(item => item.amount)) : 0;
+    const maxIncome = incomes.length > 0 ? Math.max(...incomes.map(item => item.amount)) : 0; */
 
     useEffect(() => {
         getIncomes()
@@ -51,23 +51,23 @@ function Dashboard() {
                         <History />
                         <h2 className="salary-title">Min <span>Lohn</span>Max</h2>
                         <div className="salary-item">
-                            <p>
+                           /*  <p>
                                 ${minIncome}
                             </p>
                             <p>
                                 ${maxIncome}
-                            </p>
+                            </p> */
                         </div>
                         <h2 className="salary-title">Min <span>Ausgaben</span>Max</h2>
                         <div className="salary-item">
-                            
+                         /*    
                             <p>
                                 
                                 ${minExpense}
                             </p>
                             <p>
                                 ${maxExpense}
-                              
+                               */
                             </p>
                         </div>
                     </div>
