@@ -16,6 +16,9 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res.json({ data: "hello" });
+});
 
 //routes
 readdirSync('./routes').map((route) => app.use('/api/v1', require('./routes/' + route)))
