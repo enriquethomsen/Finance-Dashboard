@@ -6,14 +6,15 @@ const app = express()
 
 const PORT = process.env.PORT || PORT
 
-
+const corsConfig = {
+  origin: "*",
+  credential: true,
+  methods: ["GET","POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 //middlewares
 app.use(express.json())
-app.use(
-  cors({
-    origin: "*",
-  })
-);
+
+app.use(cors(corsConfig));
+
 
 app.get("/", (req, res) => {
   res.json({ data: "hello" });
