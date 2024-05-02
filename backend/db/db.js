@@ -1,13 +1,18 @@
 const mongoose = require('mongoose');
 const MONGO_URL = process.env.MONGO_URL || MONGO_URL
+const PORT = process.env.PORT || PORT
 const db = async () => {
-    try {
-        mongoose.set('strictQuery', false)
-        await mongoose.connect(MONGO_URL)
-        console.log('Db Connected')
-    } catch (error) {
-        console.log('DB Connection Error');
-    }
+      try {
+    mongoose.connect(MONGO_URL)
+    .then(() => {
+        console.log('App connected to database');
+        app.listen(PORT, () => {
+            console.log(`App is listening to port: `, PORT)
+        })
+    })
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {db}
